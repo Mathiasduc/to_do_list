@@ -3,40 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>to_do</title>
-	<link rel="stylesheet" href="style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<!-- <form action=""> -->
-	<div id="filters">
-	<input id="done" type="checkbox">
-	<span>Hide done</span>
-	<input id="to-do" type="checkbox">
-	<span>Hide To-do</span>
-	<input  id="all" type="checkbox">
-	<span>Show All</span>
-		
-	</div>
 	<div id="title">
 		<input type="text" id="title-input">
 		<button id="title-button">submit title</button>
 	</div>
-	
-	
-		<div>
-			<input type="text" id="task">
-			<button id="task-button">submit task</button>
-		</div>
-	</ul>
-	
-	<div id="list-task">
-
+	<div id="filters">
+		<button id="done">Show done</button>
+		<button id="to-do">Show To-do</button>
+		<button id="all"> Show All</button>
 	</div>
 
-	<!-- </form> -->
 	
-	<script src="jq.js"></script>
-	<script src="app.js"></script>
+	
+	<div>
+		<input type="text" id="task">
+		<button id="task-button">submit task</button>
+	</div>
+</ul>
+
+<div id="list-task">
+
+</div>
+
+<!-- </form> -->
+
+<script src="jq.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
