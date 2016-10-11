@@ -2,6 +2,7 @@ var todos = [];
 var listCount = 0;
 var titleCount = 0;
 var titles = [];
+var currentTitle;
 
 $("#title-button").on("click", function(){
 	console.log($("#title-input").val());
@@ -9,18 +10,22 @@ $("#title-button").on("click", function(){
 		titles[titleCount] = $("#title-input").val();
 		var inject = "<div id='title" + titleCount + "' data-title_nbr='" + titleCount + "' ><h2>"+ titles[titleCount] +"</h2></div>";
 		$("#listTitle").append(inject);
+		currentTitle = titles[titleCount];
 		titleCount++;
-		console.log(titles);
+		display();
+		/*$("#current-title").html(currentTitle);*/
+		console.log(titles,"titles array", currentTitle, "currentTitle");
 	}
 });
 
 $("#listTitle").on("click", "div", function(){
-	console.log("click title");
+	var titleNbr = $(this).data("title_nbr");
+	currentTitle = titles[titleNbr];
+	/*$("#current-title").html(currentTitle);*/
+	console.log(titleNbr);
+	console.log(titles,"titles array", currentTitle, "currentTitle");
+	display();
 });
-
-/*$("#listTitle").on("hover", "div", function(){
-	console.log("hover title");
-});*/
 
 $("#done").on("click", function(){display("done");});
 $("#to-do").on("click", function(){display("to-do");});
@@ -42,7 +47,7 @@ $("#list-task").on("click", "input", function(){
 $("#task-button").on("click", function(){
 	todos[listCount] = new Object();
 	todos[listCount].task = $("#task").val();
-	todos[listCount].title = titles[titleCount];
+	todos[listCount].title = currentTitle;
 	todos[listCount].status = true;
 	console.log(todos);
 	var inject = "<div id=div" + listCount + " data-tasknbr='" + listCount + "'><input type=checkbox id='checkbox" + listCount + "' data-tasknbr='" + listCount + "'><span id='" + listCount +  "' data-taskNbr='" + listCount + "' class= >" + todos[listCount].task  + "</span></div>";
@@ -82,9 +87,23 @@ function display(x){
 				$("#list-task").append(inject);
 			}
 		}
-
 	}
-/*	else {
-
-}*/
+	else {
+		$("#current-title").html(currentTitle);
+		$("#list-task").html("");
+		console.log("else");
+		for (var i = 0; i < todos.length; i++) {
+			console.log(i , "loop|||", todos[i].title, "index title");
+			if (todos[i].status === false && todos[i].title == currentTitle){
+				console.log("loop if");
+				var inject = "<div id=div" + i + " data-tasknbr='" + i + "'><input type=checkbox id='checkbox" + i + "' data-tasknbr='" + i + "'><span id='" + i +  "' data-taskNbr='" + i + "' class='checked'>"+ todos[i].task  + "</span></div>";
+				$("#list-task").append(inject);
+			}
+			else if(todos[i].status === true && todos[i].title == currentTitle) {
+				console.log("loop else if");
+				var inject = "<div id=div" + i + " data-tasknbr='" + i + "'><input type=checkbox id='checkbox" + i + "' data-tasknbr='" + i + "'><span id='" + i +  "' data-taskNbr='" + i + "' class=''>"+ todos[i].task  + "</span></div>";
+				$("#list-task").append(inject);
+			}
+		}
+	}		
 }
