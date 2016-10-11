@@ -60,7 +60,7 @@ function display(x){
 	if (x === "done"){
 		$("#list-task").html("");
 		for (var i = 0; i < todos.length; i++) {
-			if (todos[i].status === false){
+			if (todos[i].status === false && todos[i].title == currentTitle){
 				var inject = "<div id=div" + i + " data-tasknbr='" + i + "'><input type=checkbox id='checkbox" + i + "' data-tasknbr='" + i + "'><span id='" + i +  "' data-taskNbr='" + i + "' class='checked'>"+ todos[i].task  + "</span></div>";
 				$("#list-task").append(inject);
 			}
@@ -69,13 +69,13 @@ function display(x){
 	else if (x === "to-do"){
 		$("#list-task").html("");
 		for (var i = 0; i < todos.length; i++) {
-			if (todos[i].status === true){
+			if (todos[i].status === true && todos[i].title == currentTitle){
 				var inject = "<div id=div" + i + " data-tasknbr='" + i + "'><input type=checkbox id='checkbox" + i + "' data-tasknbr='" + i + "'><span id='" + i +  "' data-taskNbr='" + i + "' class=''>"+ todos[i].task  + "</span></div>";
 				$("#list-task").append(inject);
 			}
 		}
 	}
-	else if (x === "all"){
+	/*else if (x === "all"){
 		$("#list-task").html("");
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].status === false){
@@ -87,7 +87,7 @@ function display(x){
 				$("#list-task").append(inject);
 			}
 		}
-	}
+	}*/
 	else {
 		$("#current-title").html(currentTitle);
 		$("#list-task").html("");
