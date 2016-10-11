@@ -1,12 +1,26 @@
 var todos = [];
 var listCount = 0;
-var newTitle;
+var titleCount = 0;
+var titles = [];
 
 $("#title-button").on("click", function(){
-	newTitle = $("#title-input").val();
-	var inject = "<div><h2>"+ newTitle +"</h2>"+"<input type=\"checkbox\" class=\"check\"></div>";
-	$("#title").prepend(inject);
+	console.log($("#title-input").val());
+	if ($("#title-input").val() !== ""){
+		titles[titleCount] = $("#title-input").val();
+		var inject = "<div id='title" + titleCount + "' data-title_nbr='" + titleCount + "' ><h2>"+ titles[titleCount] +"</h2></div>";
+		$("#listTitle").append(inject);
+		titleCount++;
+		console.log(titles);
+	}
 });
+
+$("#listTitle").on("click", "div", function(){
+	console.log("click title");
+});
+
+/*$("#listTitle").on("hover", "div", function(){
+	console.log("hover title");
+});*/
 
 $("#done").on("click", function(){display("done");});
 $("#to-do").on("click", function(){display("to-do");});
@@ -25,12 +39,10 @@ $("#list-task").on("click", "input", function(){
 	}
 });
 
-
-
 $("#task-button").on("click", function(){
 	todos[listCount] = new Object();
 	todos[listCount].task = $("#task").val();
-	todos[listCount].title = newTitle;
+	todos[listCount].title = titles[titleCount];
 	todos[listCount].status = true;
 	console.log(todos);
 	var inject = "<div id=div" + listCount + " data-tasknbr='" + listCount + "'><input type=checkbox id='checkbox" + listCount + "' data-tasknbr='" + listCount + "'><span id='" + listCount +  "' data-taskNbr='" + listCount + "' class= >" + todos[listCount].task  + "</span></div>";
@@ -70,5 +82,9 @@ function display(x){
 				$("#list-task").append(inject);
 			}
 		}
+
 	}
+/*	else {
+
+}*/
 }
