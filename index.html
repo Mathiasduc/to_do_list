@@ -5,30 +5,41 @@
 	<title>to_do</title>
 <!-- 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 -->	
+<link rel="stylesheet" href="semantic/semantic.css">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans" rel="stylesheet">
 </head>
 <body>	
+	<div id="headerBlock">
+		<div class="ui action input newtitle">
+			<input id="title-input" type="text" placeholder="New title" >
+			<button id="title-button" class="ui teal right icon labeled  button">
+				Add list
+			</button>
+		</div>
+		<h2 id="headerTitle">My lists:</h2>
+	</div>
 	<div id="listTitle">
 		
 	</div>
 
-	<div>
-		<input type="text" id="title-input">
-		<button id="title-button">submit title</button>
-	</div>
+	<div id="task-menu">
 
-	<div id="filters">
-		<button id="done">Show done</button>
-		<button id="to-do">Show To-do</button>
-		<button id="all"> Show All</button>
-	</div>
-	
-	<div>
-		<input type="text" id="task">
-		<button id="task-button">submit task</button>
-	</div>
-	<div id="current-title">
+		<div>
+			<input type="text" id="task">
+			<button id="task-button">New task</button>
+		</div>
+
+		<div id="current-title">
+			Give me a title
+		</div>
 		
+		<div id="filters">
+			<button id="done">Show done</button>
+			<button id="to-do">Show To-do</button>
+			<button id="all"> Show All</button>
+		</div>
+
 	</div>
 	<div id="list-task">
 	</div>
