@@ -5,6 +5,9 @@ body {
 	text-decoration:line-through;
 	
 }
+/* #listCollumn {
+	
+}
 #listTitle {
 	display: flex;
 	justify-content: center;
@@ -21,20 +24,12 @@ body {
 	margin-right: 1rem;
 	font-size: 30px;
 }
-#headerBlock {
-	display: flex;
-	justify-content: center;
-}
 .newtitle {
 	margin-top: auto;
 	margin-bottom: auto;	
 	height: 35px;
 	margin-left: -20%;
 	margin-right: 20%;
-}
-#headerBlock h2 {
-	margin: auto 0 auto 0;
-	font-size: 40px;
 }
 #task-menu{
 	display: flex;
@@ -49,17 +44,8 @@ body {
 	font-family: 'EB Garamond', serif;
 	font-size: 40px;
 }
-#list-task {
-	display: flex;
-	flex-direction: column;
-	margin-left: 100px;
-}
 .checky{
 	width: 15px;
 	height: 15px;
-
 }
-#list-task div span{
-	font-size: 20px;
-	margin-left: 20px;
-}
+ */

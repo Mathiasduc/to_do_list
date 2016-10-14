@@ -9,41 +9,50 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans" rel="stylesheet">
 </head>
-<body>	
-	<div id="headerBlock">
-		<div class="ui action input newtitle">
-			<input id="title-input" type="text" placeholder="New title" >
-			<button id="title-button" class="ui teal right icon labeled  button">
-				Add list
-			</button>
-		</div>
-		<h2 id="headerTitle">My lists:</h2>
-	</div>
-	<div id="listTitle">
-		
-	</div>
+<body>
+	<div class="ui grid centered">
+		<div id="listCollumn" class="four wide column">
+			<div class="ui action input newtitle">
+				<input id="title-input" type="text" placeholder="New title" >
+				<button id="title-button" class="ui teal right icon labeled  button">
+					Add list
+				</button>
+			</div>
+			<h2 id="headerTitle">My lists:</h2>
+			<div id="listTitle">
 
-	<div id="task-menu">
-
-		<div>
-			<input type="text" id="task-input">
-			<button id="task-button">New task</button>
+			</div>
 		</div>
 
-		<div id="current-title">
-			Give me a title
-		</div>
-		
-		<div id="filters">
-			<button id="done">Show done</button>
-			<button id="to-do">Show To-do</button>
-			<button id="all"> Show All</button>
-		</div>
+		<div id="task-menu" class="twelve wide  column centered">
 
-	</div>
-	<div id="list-task">
-	</div>
+			<div class="row centered" id="current-title">
+				Give me a title
+			</div>
+			<div class="five wide column">
+				<div class="ui action input">
+					<input type="text" placeholder="New task">
+					<button class="ui icon button">
+						Add task
+						<i class="plus icon"></i>
+					</button>
+				</div>
 
+			</div>
+			<div class="five wide column">
+
+				<div id="filters">
+					<button id="done">Show done</button>
+					<button id="to-do">Show To-do</button>
+					<button id="all"> Show All</button>
+				</div>
+			</div>
+			<div id="list-task">
+
+			</div>
+
+		</div>
+	</div>
 	<script src="jq.js"></script>
 	<script src="app.js"></script>
 </body>
